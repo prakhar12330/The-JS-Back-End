@@ -3,6 +3,11 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+
+const dummyData = {
+  "Name": "Prakhar",
+}
+
 //ye kehta hai ki agar aapke browser se `/` route pe koi get req aati hai to ek callback function call krdo....ar ek response send krdo "Hello World"
 app.get('/', (req, res) => {
     res.send('Hello World!')
@@ -14,6 +19,9 @@ app.get('/login',(req,res)=>{
 
 app.get('/youtube',(req,res)=>{
     res.send('Chai and code')
+})
+app.get('/details',(req,res)=>{
+    res.json(dummyData);
 })
 
 app.listen(process.env.PORT, () => {
